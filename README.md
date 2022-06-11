@@ -43,6 +43,9 @@ Patch Notes:
 </summary>
 <br>
 
+#### 1.1.2:
+- Fixed issues with Russian Roulette
+
 #### 1.0.0:
 - Released.
 </details>

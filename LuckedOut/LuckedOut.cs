@@ -12,14 +12,14 @@ namespace LuckedOut
     [BepInDependency("pykess.rounds.plugins.moddingutils", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("com.Root.Cards", BepInDependency.DependencyFlags.HardDependency)]
     [BepInDependency("root.classes.manager.reborn", BepInDependency.DependencyFlags.HardDependency)]
-    [BepInDependency("root.rounds.temporarystatspatchpatch", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency("pykess.rounds.plugins.temporarystatspatch", BepInDependency.DependencyFlags.HardDependency)]
     [BepInPlugin(ModId, ModName, Version)]
     [BepInProcess("Rounds.exe")]
     public class LuckedOut : BaseUnityPlugin
     {
         private const string ModId = "com.rsmind.rounds.commission.LuckedOut";
         private const string ModName = "Lucked Out";
-        public const string Version = "1.0.0";
+        public const string Version = "1.1.2";
         public const string ModInitials = "LO";
         public static LuckedOut instance { get; private set; }
 

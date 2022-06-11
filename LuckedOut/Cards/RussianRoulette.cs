@@ -76,6 +76,7 @@ namespace LuckedOut.Cards
                 if (p.data.GetAdditionalData().spins > 0) 
                 {
                     spinWheel(p);
+                    p.data.GetAdditionalData().spins -= 1;
                     done = false;
                 }
             });
@@ -151,7 +152,7 @@ namespace LuckedOut.Cards
             {
                 speed = 733f;
             }
-            if (rand > 3) // 4-11 foes -1 point
+            if (rand > 3) // 4-11 foes weak poison
             {
                 speed = 740f;
             }
@@ -163,7 +164,7 @@ namespace LuckedOut.Cards
             {
                 speed = 762f;
             }
-            if (rand > 24) // 25-29 -1 point
+            if (rand > 24) // 25-29 self weak poison
             {
                 speed = 773f;
             }
@@ -227,7 +228,7 @@ namespace LuckedOut.Cards
             {
                 ModdingUtils.Utils.Cards.instance.AddCardToPlayer(player, Unluckier.card, false, "", 0, 0);
             }
-            if (rand > 5 && rand < 12)
+            if (rand > 3 && rand < 12)
             {
                 PlayerManager.instance.players.ForEach(p =>
                 {
