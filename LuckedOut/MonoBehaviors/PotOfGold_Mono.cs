@@ -22,7 +22,7 @@ namespace LuckedOut.MonoBehaviors
 		IEnumerator BattleStart(IGameModeHandler gm)
 		{
 			ReversibleEffect reversibleEffect = player.gameObject.AddComponent<ReversibleEffect>();
-			reversibleEffect.characterStatModifiersModifier.health_add = (player.data.GetAdditionalData().luck * 0.05f);
+			reversibleEffect.characterStatModifiersModifier.health_mult = 1 + (player.data.GetAdditionalData().luck * 0.05f);
 			reversibleEffect.gunAmmoStatModifier.reloadTimeMultiplier_mult = 1 - (player.data.GetAdditionalData().luck * 0.05f);
 			reversibleEffect.SetLivesToEffect(player.data.stats.respawns + 1);
 			yield break;
