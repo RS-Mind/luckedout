@@ -12,18 +12,19 @@ namespace LuckedOut.MonoBehaviors
 		private void Start()
         {
 			player = GetComponentInParent<Player>();
-			GameModeManager.AddHook(GameModeHooks.HookPointStart, PointStart);
+			GameModeManager.AddHook(GameModeHooks.HookPickEnd, PickEnd);
 			GameModeManager.AddHook(GameModeHooks.HookBattleStart, BattleStart);
 		}
 
 		private void OnDestroy()
 		{
-			GameModeManager.RemoveHook(GameModeHooks.HookPointStart, PointStart);
+			GameModeManager.RemoveHook(GameModeHooks.HookPickEnd, PickEnd);
 			GameModeManager.RemoveHook(GameModeHooks.HookBattleStart, BattleStart);
 		}
 
-		IEnumerator PointStart(IGameModeHandler gm)
+		IEnumerator PickEnd(IGameModeHandler gm)
 		{
+			int jackpot = 0;
 			player.data.GetAdditionalData().luck = 0;
 			foreach (CardInfo card in player.data.currentCards)
             {
@@ -51,6 +52,12 @@ namespace LuckedOut.MonoBehaviors
 				{
 					player.data.GetAdditionalData().luck -= 2;
 				}
+				if (card == Jackpot.card)
+				{
+					player.data.GetAdditionalData().luck = 20;
+					jackpot = 5;
+					break;
+				}
 			}
 			if (player.data.GetAdditionalData().luck >= 15)
             {
@@ -67,7 +74,7 @@ namespace LuckedOut.MonoBehaviors
                 {
 					ModdingUtils.Utils.Cards.instance.AddCardToPlayer(player, LeprechaunsCap.card, false, "", 0, 0);
 				}
-				player.data.GetAdditionalData().luck = 15;
+				player.data.GetAdditionalData().luck = 15 + jackpot;
             }
 
 			yield break;

@@ -144,7 +144,7 @@ namespace LuckedOut.Cards
             wheel.transform.SetPositionAndRotation(new Vector3(0, -40, -1), new Quaternion(0, 0, 0, 0));
             Quaternion rotation = new Quaternion(0, 0, 0, 0);
             rand = Random.Range(0, 54);
-            if (rand == 0) // 0 genie
+            if (rand == 0) // 0 jackpot
             {
                 speed = 728.5f;
             }
@@ -221,8 +221,7 @@ namespace LuckedOut.Cards
             }
             if (rand == 0)
             {
-                ModdingUtils.Utils.Cards.instance.AddCardToPlayer(player, ModdingUtils.Utils.Cards.instance.GetCardWithName("Genie"), false, "", 0, 0);
-                ModdingUtils.Utils.Cards.instance.AddCardToPlayer(player, ModdingUtils.Utils.Cards.instance.GetCardWithName("Genie"), false, "", 0, 0);
+                ModdingUtils.Utils.Cards.instance.AddCardToPlayer(player, Jackpot.card, false, "", 0, 0);
             }
             if (rand > 0 && rand < 4)
             {
@@ -234,7 +233,7 @@ namespace LuckedOut.Cards
                 {
                     if (p.playerID != player.playerID)
                     {
-                        ModdingUtils.Utils.Cards.instance.AddCardToPlayer(player, WeakPoison.card, false, "", 0, 0);
+                        ModdingUtils.Utils.Cards.instance.AddCardToPlayer(p, WeakPoison.card, false, "", 0, 0);
                     }
                 });
             }

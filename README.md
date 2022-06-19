@@ -43,6 +43,11 @@ Patch Notes:
 </summary>
 <br>
 
+#### 1.2.0:
+- Updated Jackpot for Russian Roulette
+- Four Leaf Clover is no longer unique
+- Fixed issue with Pot of Gold
+
 #### 1.1.2:
 - Fixed issues with Russian Roulette
 

@@ -19,7 +19,7 @@ namespace LuckedOut
     {
         private const string ModId = "com.rsmind.rounds.commission.LuckedOut";
         private const string ModName = "Lucked Out";
-        public const string Version = "1.1.2";
+        public const string Version = "1.2.0";
         public const string ModInitials = "LO";
         public static LuckedOut instance { get; private set; }
 
@@ -47,6 +47,7 @@ namespace LuckedOut
             CustomCard.BuildCard<PotOfGold>((card) => PotOfGold.card = card);
             CustomCard.BuildCard<RussianRoulette>((card) => RussianRoulette.card = card);
 
+            CustomCard.BuildCard<Jackpot>((card) => { ModdingUtils.Utils.Cards.instance.AddHiddenCard(card); Jackpot.card = card; });
             CustomCard.BuildCard<LeprechaunsCap>((card) => { ModdingUtils.Utils.Cards.instance.AddHiddenCard(card); LeprechaunsCap.card = card; });
             CustomCard.BuildCard<Lucky>((card) => { ModdingUtils.Utils.Cards.instance.AddHiddenCard(card); Lucky.card = card; });
             CustomCard.BuildCard<Luckier>((card) => { ModdingUtils.Utils.Cards.instance.AddHiddenCard(card); Luckier.card = card; });

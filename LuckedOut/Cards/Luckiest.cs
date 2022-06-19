@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LuckedOut.Cards
 {
-    class Luckiest : CustomCard
+    class Jackpot : CustomCard
     {
         public override void Callback()
         {
@@ -29,11 +29,11 @@ namespace LuckedOut.Cards
 
         protected override string GetTitle()
         {
-            return "Luckiest";
+            return "Jackpot";
         }
         protected override string GetDescription()
         {
-            return "";
+            return "You're now lucky beyond luck!";
         }
         protected override GameObject GetCardArt()
         {
@@ -41,19 +41,13 @@ namespace LuckedOut.Cards
         }
         protected override CardInfo.Rarity GetRarity()
         {
-            return CardInfo.Rarity.Rare;
+            return CardInfo.Rarity.Common;
         }
         protected override CardInfoStat[] GetStats()
         {
             return new CardInfoStat[]
             {
-                new CardInfoStat()
-                {
-                    positive = false,
-                    stat = "Luck",
-                    amount = "+3",
-                    simepleAmount = CardInfoStat.SimpleAmount.notAssigned
-                }
+
             };
         }
         protected override CardThemeColor.CardThemeColorType GetTheme()

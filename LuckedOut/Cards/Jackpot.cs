@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace LuckedOut.Cards
 {
-    class Lucky : CustomCard
+    class Luckiest : CustomCard
     {
         public override void Callback()
         {
@@ -29,7 +29,7 @@ namespace LuckedOut.Cards
 
         protected override string GetTitle()
         {
-            return "Lucky";
+            return "Luckiest";
         }
         protected override string GetDescription()
         {
@@ -51,7 +51,7 @@ namespace LuckedOut.Cards
                 {
                     positive = false,
                     stat = "Luck",
-                    amount = "+1",
+                    amount = "+3",
                     simepleAmount = CardInfoStat.SimpleAmount.notAssigned
                 }
             };
